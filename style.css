@@ -1,0 +1,861 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =========================
+   HEADER – LOGO AS TITLE
+========================= */
+
+.main-header {
+  background: #2c5f5d;      /* green area 8*/
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  position: relative;
+  z-index: 20;
+}
+
+.church-logo {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* TAGLINE */
+.tagline {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 6px 0 0 0;
+    opacity: 0.95;
+    align-items: center;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .church-logo {
+        max-width: 300px;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+}
+
+
+/* MOBILE HEADER */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .church-logo {
+        height: 65px;
+    }
+
+    .header-text h1 {
+        font-size: 1.7em;
+    }
+}
+
+/* =========================
+   HERO SLIDESHOW (PARALLAX)
+========================= */
+.dropdown-content {
+  z-index: 9999;
+}
+
+.hero-slideshow {
+    display: none;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 2.4em;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    max-width: 750px;
+    font-size: 1.1em;
+}
+
+/* MOBILE FIX (parallax disabled on phones for performance) */
+@media (max-width: 768px) {
+    .slide {
+        background-attachment: scroll;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  flex-wrap: nowrap;   /* 🔥 THIS prevents stacking */
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;   /* centers under verse */
+  align-items: center;
+  gap: 25px;                 /* space between items */
+  flex-direction: row;       /* force horizontal */
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.service-banner {
+    color: black;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 0.95em;
+    background-color: #1f3f3e;
+}
+
+.dropdown a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: #1f3f3e;
+}
+
+.dropdown a:hover {
+  text-decoration: underline;
+}
+
+.nav-menu {
+  margin-top: 15px;
+}
+
+.slideshow-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 30px auto;
+  background-color: #1f5f5b;
+  padding: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+ 
+
+/* =========================
+   DROPDOWNS
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1f3f3e;
+    min-width: 190px;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    padding: 12px;
+    font-weight: normal;
+}
+
+.dropdown-content a:hover {
+    background: #1f3f3e;
+    color: #f7f7f7;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    background: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #2c5f5d;
+    font-size: 1.9em;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 1.05em;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+section h2 {
+    color: #2c5f5d;
+    margin-bottom: 25px;
+    font-size: 1.7em;
+}
+
+/* =========================
+   VALUES / MISSION
+========================= */
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.value-card h3 {
+    color: #2c5f5d;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   CARDS (SERMONS / EVENTS)
+========================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #2c5f5d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 12px;
+}
+
+.card a {
+    color: #2c5f5d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.community-outreach {
+  padding: 60px 20px;
+  background-color: #f8fbfb;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.community-outreach h2 {
+  font-size: 2rem;
+  color: #1f5f5b;
+  margin-bottom: 15px;
+}
+
+.outreach-intro {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.outreach-card {
+  background: white;
+  border-left: 6px solid #1f5f5b;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+}
+
+.outreach-card h3 {
+  margin-top: 0;
+  color: #1f5f5b;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.outreach-card p {
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* MAIN STAFF ROW */
+.staff-row {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.staff-row.featured img {
+  width: 240px;
+  height: 300px;
+}
+
+.staff-row.featured {
+  padding: 30px;
+}
+
+/* ⭐ FEATURED (Wade & Kellie) */
+.staff-row.highlight {
+  border-left: 6px solid #245c59;
+  padding: 25px;
+}
+
+/* 📸 4x6 STYLE IMAGE */
+.staff-row img {
+  width: 220px;
+  height: 280px;   /* taller like a 4x6 */
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.staff-info h3 {
+  color: #245c59;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.staff-info p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.staff-row.highlight img {
+  width: 260px;
+  height: 320px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .staff-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .staff-row img {
+    width: 160px;
+    height: 210px;
+  }
+}
+
+.staff-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+}
+
+.staff-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #245c59;
+  margin-bottom: 40px;
+}
+
+/* EACH ROW */
+.staff-row {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 👇 WALLET SIZE IMAGE */
+.staff-row img {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* TEXT SIDE */
+.staff-info h3 {
+  color: #245c59;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width: 600px) {
+  .staff-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-section h2 {
+    font-size: 2rem;
+  }
+}
+
+.staff-card {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f7f8f4;
+  border-left: 6px solid #1f4d3a;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: stretch;
+  gap: 35px;
+}
+
+.staff-image img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.staff-image {
+  display: flex;
+  align-items: center;
+}
+
+.staff-info {
+  flex: 1;
+}
+
+.staff-info h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #1f4d3a;
+}
+
+.staff-title {
+  margin: 6px 0 14px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.staff-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #d6ddd2;
+  margin: 15px 0 20px;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Makes it stack nicely on phones */
+@media (max-width: 750px) {
+  .staff-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px;
+  }
+
+  .staff-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .staff-info h2 {
+    font-size: 1.7rem;
+  }
+}
+/* =========================
+   GIVING BUTTON
+========================= */
+
+.give-button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #2c5f5d;
+    color: #ffffff;
+    padding: 12px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.give-button:hover {
+    background: #1f3f3e;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #2c5f5d;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #1f3f3e;
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 14px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        margin-top: 5px;
+        border-radius: 6px;
+
+    }
+
+    .dropdown.active .dropdown-content {
+        display: flex;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .hero h2 {
+        font-size: 1.5em;
+    }
+}
+
+.staff-card {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f7f8f4;
+  border-left: 6px solid #1f4d3a;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.staff-image img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+
+
+.staff-info {
+  flex: 1;
+}
+
+.staff-info h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #1f4d3a;
+}
+
+.staff-title {
+  margin: 6px 0 14px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.staff-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #d6ddd2;
+  margin: 15px 0 20px;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Makes it stack nicely on phones */
+@media (max-width: 750px) {
+  .staff-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px;
+  }
+
+  .staff-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .staff-info h2 {
+    font-size: 1.7rem;
+  }
+
+.staff-image {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.staff-card {
+  display: flex;
+  align-items: stretch;
+}
+
+.staff-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.staff-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.staff-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff-image img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+}
+}
+
+
+.staff-card {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.staff-image {
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
